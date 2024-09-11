@@ -5,16 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Analysis Results</title>
     <style>
+        /* Dark mode background and text colors */
+        body {
+            background-color: #1b1f24;
+            color: #e0e6ed;
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #67e8f9;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
+            background-color: #252a31;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7);
         }
-        table, th, td {
-            border: 1px solid black;
-        }
+
         th, td {
-            padding: 10px;
+            padding: 12px 15px;
             text-align: left;
+            border: 1px solid #444c56;
+        }
+
+        th {
+            background: linear-gradient(135deg, #1bafed, #14d1c6);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        td {
+            color: #e0e6ed;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effects on table rows */
+        tr:hover {
+            background-color: #2d333b;
+        }
+
+        /* For better readability, alternate row colors */
+        tbody tr:nth-child(odd) {
+            background-color: #22272e;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #2d333b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.8rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            th, td {
+                padding: 8px 10px;
+            }
         }
     </style>
 </head>
