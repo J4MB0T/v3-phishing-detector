@@ -1,0 +1,12 @@
+logs
+config.ini
+logs/*
+email_jsons/*
+json/*
+jsons/*
+archive/*
+json/
+email_jsons/
+archive/
+logs/
+.env

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Analysis Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Analysis Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Subject</th>
+                <th>From</th>
+                <th>SPF Result</th>
+                <th>DKIM Result</th>
+                <th>Suspicious</th>
+                <th>IP Address</th>
+                <th>IP Lookup Result</th>
+                <th>Domain Owner</th>
+                <th>Domain Created Recently</th>
+                <th>IP Registration Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for email in emails %}
+                <tr>
+                    <td>{{ email.id }}</td>
+                    <td>{{ email.subject }}</td>
+                    <td>{{ email.from }}</td>
+                    <td>{{ email.analysis.spf_result }}</td>
+                    <td>{{ email.analysis.dkim_result }}</td>
+                    <td>{{ email.analysis.suspicious }}</td>
+                    <td>{{ email.analysis.ip_address }}</td>
+                    <td>{{ email.analysis.ip_lookup_result }}</td>
+                    <td>{{ email.analysis.domain_owner }}</td>
+                    <td>{{ email.analysis.domain_created_recently }}</td>
+                    <td>{{ email.analysis.ip_registration_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
